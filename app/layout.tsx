@@ -2,6 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = "https://zakariyajabbar.com";
+const siteTitle = "Zakariya Jabbar | Software Developer";
+const siteDescription =
+  "Zakariya Jabbar is a software developer focused on building web applications and systems with clean design, reliable functionality, and AI-powered workflows.";
+const previewImage = "/about-photo.png";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -15,22 +21,32 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zakariyajabbar.com"),
-  title: "Zakariya Jabbar | Software Developer",
-  description:
-    "Zakariya Jabbar is a software developer focused on building websites, Discord systems, and custom software from idea to reality.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Zakariya Jabbar | Software Developer",
-    description:
-      "Zakariya Jabbar is a software developer focused on building websites, Discord systems, and custom software from idea to reality.",
-    url: "https://zakariyajabbar.com",
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
     siteName: "Zakariya Jabbar",
     type: "website",
+    images: [
+      {
+        url: previewImage,
+        alt: "Zakariya Jabbar portrait",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: [previewImage],
   },
 };
 
@@ -52,11 +68,34 @@ const loaderBootScript = `
 })();
 `;
 
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Zakariya R. Jabbar",
+  alternateName: "Zakariya Jabbar",
+  url: siteUrl,
+  jobTitle: "Software Developer",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "IQ",
+  },
+  sameAs: [
+    "https://github.com/zakariyarjabbar",
+    "https://www.linkedin.com/in/zakariya-jabbar-6b7880407",
+    "https://www.instagram.com/zakariyarjabbar",
+    "https://x.com/zakariyarjabbar",
+  ],
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: loaderBootScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        />
       </head>
       <body>{children}</body>
     </html>

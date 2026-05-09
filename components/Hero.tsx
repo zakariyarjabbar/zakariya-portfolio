@@ -11,8 +11,8 @@ export function Hero() {
           <span aria-hidden="true">Jabbar</span>
         </h1>
         <p className="hero__subtitle">
-          Software developer building websites, FiveM tools/scripts, Discord automation and custom
-          server systems from planning to launch.
+          Software developer focused on building web applications and systems, combining clean
+          design, reliable functionality, and AI-powered workflows to improve speed and quality.
         </p>
         <div className="hero__actions">
           <a href="#projects" className="button button--primary">

@@ -14,9 +14,11 @@ export function About() {
           <SectionLabel>WHO I AM</SectionLabel>
           <h2 id="about-title">A Little About Me</h2>
           <p className="about__intro-text">
-            I’m Zakariya R. Jabbar, a 20-year-old developer from Babil, Iraq. I enjoy building
-            useful digital systems from the ground up, including websites, FiveM scripts, Discord
-            systems, and automation tools.
+            I’m Zakariya R. Jabbar, a 20-year-old developer from Iraq. I care about building things
+            with purpose, not just adding features for the sake of it. My focus is on creating
+            systems that are clear, practical, and easy to use. I use AI to support my workflow,
+            speed up development, and explore better solutions while keeping the final product
+            reliable, polished, and focused on real value.
           </p>
           <blockquote className="about__mission">
             <span aria-hidden="true">“</span>
@@ -38,7 +40,7 @@ export function About() {
         <figure className="about__photo-card">
           <Image
             src={aboutPhoto}
-            alt="Portrait photo of Zakariya Jabbar"
+            alt="Zakariya Jabbar portrait"
             draggable={false}
             className="about__photo select-none"
           />

@@ -5,11 +5,12 @@ export function LogoMark({ className = "" }: { className?: string }) {
     <Image
       src="/logo-zj.svg"
       alt="Zakariya Jabbar ZJ logo"
-      width={35}
-      height={46}
+      width={433}
+      height={497}
       priority
       draggable={false}
       className={`logo-mark select-none ${className}`}
+      style={{ height: "auto" }}
     />
   );
 }

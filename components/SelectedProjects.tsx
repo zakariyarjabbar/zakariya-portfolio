@@ -18,7 +18,7 @@ export function SelectedProjects() {
       aria-labelledby="projects-title"
     >
       <div className="section-heading section-heading--center projects__heading">
-        <h2 id="projects-title">Selected Projects</h2>
+        <h2 id="projects-title">My Projects</h2>
         <p>A small collection of digital products, websites, and systems I&apos;ve worked on.</p>
       </div>
 
@@ -36,7 +36,7 @@ export function SelectedProjects() {
           <div className="project-showcase__screen">
             <Image
               src={project.image}
-              alt={`${project.title} project screenshot`}
+              alt={`${project.title} screenshot showing the project's command center interface`}
               fill
               sizes="(max-width: 820px) 100vw, (max-width: 1200px) 70vw, 720px"
               draggable={false}
