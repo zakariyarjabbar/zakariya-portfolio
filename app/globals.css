@@ -914,6 +914,14 @@ main {
   text-wrap: pretty;
 }
 
+.about__intro-text p {
+  margin: 0;
+}
+
+.about__intro-text p + p {
+  margin-top: 12px;
+}
+
 .about__mission {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);

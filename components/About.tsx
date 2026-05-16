@@ -13,13 +13,17 @@ export function About() {
         <div className="about__copy">
           <SectionLabel>WHO I AM</SectionLabel>
           <h2 id="about-title">A Little About Me</h2>
-          <p className="about__intro-text">
-            I’m Zakariya R. Jabbar, a 20-year-old developer from Iraq. I care about building things
-            with purpose, not just adding features for the sake of it. My focus is on creating
-            systems that are clear, practical, and easy to use. I use AI to support my workflow,
-            speed up development, and explore better solutions while keeping the final product
-            reliable, polished, and focused on real value.
-          </p>
+          <div className="about__intro-text">
+            <p>
+              My name is Zakariya Razzaq Jabbar, and I’m a 20-year-old software developer from
+              Iraq. I focus on building modern web applications and digital systems with clear
+              structure, clean design, and reliable functionality.
+            </p>
+            <p>
+              I enjoy taking ideas from the early planning stage and turning them into products that
+              feel organized, practical, and ready for real users.
+            </p>
+          </div>
           <blockquote className="about__mission">
             <span aria-hidden="true">“</span>
             <p>
@@ -41,6 +45,7 @@ export function About() {
           <Image
             src={aboutPhoto}
             alt="Zakariya Jabbar portrait"
+            loading="eager"
             draggable={false}
             className="about__photo select-none"
           />

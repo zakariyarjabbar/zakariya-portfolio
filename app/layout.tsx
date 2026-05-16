@@ -3,9 +3,9 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = "https://zakariyajabbar.com";
-const siteTitle = "Zakariya Jabbar | Software Developer";
+const siteTitle = "Zakariya Jabbar";
 const siteDescription =
-  "Zakariya Jabbar is a software developer focused on building web applications and systems with clean design, reliable functionality, and AI-powered workflows.";
+  "Software developer focused on building web applications and systems, combining clean design, reliable functionality, and AI-powered workflows to improve speed and quality.";
 const previewImage = "/about-photo.png";
 
 const inter = Inter({
@@ -38,7 +38,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: previewImage,
-        alt: "Zakariya Jabbar portrait",
+        width: 1200,
+        height: 630,
+        alt: "Zakariya Jabbar portfolio preview",
       },
     ],
   },
