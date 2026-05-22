@@ -38,8 +38,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: previewImage,
-        width: 1200,
-        height: 630,
         alt: "Zakariya Jabbar portfolio preview",
       },
     ],
