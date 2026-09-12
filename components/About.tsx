@@ -15,7 +15,7 @@ export function About() {
           <h2 id="about-title">A Little About Me</h2>
           <div className="about__intro-text">
             <p>
-              My name is Zakariya Razzaq Jabbar, and I’m a 20-year-old software developer from
+              My name is Zakariya Razzaq Jabbar, and I’m a 20-year-old website developer from
               Iraq. I focus on building modern web applications and digital systems with clear
               structure, clean design, and reliable functionality.
             </p>
