@@ -11,7 +11,7 @@ export function Hero() {
           <span aria-hidden="true">Jabbar</span>
         </h1>
         <p className="hero__subtitle">
-          Software developer focused on building web applications and systems, combining clean
+          Website developer focused on building web applications and systems, combining clean
           design, reliable functionality, and AI-powered workflows to improve speed and quality.
         </p>
         <div className="hero__actions">
