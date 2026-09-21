@@ -49,7 +49,7 @@ export function About() {
             draggable={false}
             className="about__photo select-none"
           />
-          <figcaption>AI-generated portrait via Google Whisk</figcaption>
+          <figcaption>Portrait of Zakariya Jabbar</figcaption>
         </figure>
       </div>
 

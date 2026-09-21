@@ -1,0 +1,27 @@
+[
+  {
+    "title": "ZEKO_OS",
+    "description": "A full-stack web app built as a digital command center, featuring a custom terminal interface, authentication, admin tools, and real-time communication.",
+    "tags": ["Live", "Next.js", "TypeScript", "React", "Supabase", "Framer Motion"],
+    "image": "/zeko-os-main.png",
+    "imageAlt": "ZEKO_OS screenshot showing the project's command center interface",
+    "url": "https://zeko-os.vercel.app/"
+  },
+  {
+    "title": "3ZEK12312O_OS",
+    "description": "A full-stack web app built as a digital command center, featuring a custom terminal interface, authentication, admin tools, and real-time communication.",
+    "tags": ["Live", "Next.js", "TypeScript", "React", "Supabase", "Framer Motion"],
+    "image": "/zeko-os-main.png",
+    "imageAlt": "ZEKO_OS screenshot showing the project's command center interface",
+    "url": "https://zeko-os.vercel.app/"
+  },
+  {
+    "title": "Z3123EKO_OS",
+    "description": "A full-stack web app built as a digital command center, featuring a custom terminal interface, authentication, admin tools, and real-time communication.",
+    "tags": ["Live", "Next.js"],
+    "image": "/zeko-os-main.png",
+    "imageAlt": "ZEKO_OS screenshot showing the project's command center interface",
+    "url": "https://zeko-os.vercel.app/"
+  }
+
+]
