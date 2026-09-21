@@ -1,5 +1,13 @@
 [
   {
+  "title": "AUREL HOUSE",
+  "description": "A fictional Mediterranean boutique hotel website featuring room collections, a browser-based booking demo, reservation management, and a responsive coastal design.",
+  "tags": ["Demo","Next.js", "TypeScript", "React", "CSS", "LocalStorage"],
+  "image": "/aurel-house-preview.jpg",
+  "imageAlt": "AUREL HOUSE preview showing a coastal limestone hotel and pool overlooking the Mediterranean, with the headline Twelve rooms. Days without hurry.",
+  "url": "https://aurel-house.vercel.app"
+},
+  {
     "title": "ZEKO_OS",
     "description": "A full-stack web app built as a digital command center, featuring a custom terminal interface, authentication, admin tools, and real-time communication.",
     "tags": ["Live", "Next.js", "TypeScript", "React", "Supabase", "Framer Motion"],
@@ -8,20 +16,13 @@
     "url": "https://zeko-os.vercel.app/"
   },
   {
-    "title": "3ZEK12312O_OS",
-    "description": "A full-stack web app built as a digital command center, featuring a custom terminal interface, authentication, admin tools, and real-time communication.",
-    "tags": ["Live", "Next.js", "TypeScript", "React", "Supabase", "Framer Motion"],
-    "image": "/zeko-os-main.png",
-    "imageAlt": "ZEKO_OS screenshot showing the project's command center interface",
-    "url": "https://zeko-os.vercel.app/"
-  },
-  {
-    "title": "Z3123EKO_OS",
-    "description": "A full-stack web app built as a digital command center, featuring a custom terminal interface, authentication, admin tools, and real-time communication.",
-    "tags": ["Live", "Next.js"],
-    "image": "/zeko-os-main.png",
-    "imageAlt": "ZEKO_OS screenshot showing the project's command center interface",
-    "url": "https://zeko-os.vercel.app/"
-  }
+  "title": "Super Sauce",
+  "description": "An Arabic restaurant website for Super Sauce in Iraq, featuring a searchable menu, interactive branch map, branch finder, and responsive right-to-left design.",
+  "tags": ["Next.js", "TypeScript", "React", "CSS", "RTL"],
+  "image": "/super-sauce-homepage.jpg",
+  "imageAlt": "Super Sauce homepage screenshot showing the navigation header and red burger hero section",
+  "url": "https://supersauce-rho.vercel.app"
+}
+
 
 ]
