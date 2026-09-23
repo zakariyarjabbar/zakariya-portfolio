@@ -661,9 +661,9 @@ main {
 
 .hero__portrait-image {
   position: relative;
-  width: clamp(450px, 44vw, 620px);
+  width: clamp(490px, 48vw, 680px);
   max-width: none;
-  max-height: min(68vh, 680px);
+  max-height: min(74vh, 740px);
   height: auto;
   object-fit: contain;
   object-position: center right;
@@ -1545,7 +1545,7 @@ main {
   }
 
   .hero__portrait-image {
-    width: min(42vw, 500px);
+    width: min(46vw, 550px);
   }
 }
 
@@ -1556,7 +1556,7 @@ main {
   }
 
   .hero__portrait-image {
-    width: min(40vw, 390px);
+    width: min(44vw, 430px);
   }
 
   .project-showcase__stage {
@@ -1646,7 +1646,7 @@ main {
   }
 
   .hero__portrait-image {
-    width: min(88vw, 430px);
+    width: min(94vw, 480px);
   }
 
   .contour-accent {
