@@ -1,5 +1,6 @@
 import Image from "next/image";
 import heroPortrait from "@/public/hero-portrait.png";
+import { versionPublicAsset } from "@/lib/versioned-assets";
 
 export function Hero() {
   return (
@@ -31,7 +32,7 @@ export function Hero() {
 
       <div className="hero__portrait" aria-label="Black-and-white portrait">
         <Image
-          src={heroPortrait}
+          src={{ ...heroPortrait, src: versionPublicAsset("/hero-portrait.png") }}
           alt="Black-and-white portrait of Zakariya Jabbar"
           priority
           sizes="(max-width: 820px) min(94vw, 480px), (max-width: 980px) 44vw, (max-width: 1100px) 46vw, clamp(490px, 48vw, 680px)"

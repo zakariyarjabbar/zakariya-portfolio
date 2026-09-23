@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { versionPublicAsset } from "@/lib/versioned-assets";
 
 const siteUrl = "https://zakariyajabbar.com";
 const siteTitle = "Zakariya Jabbar";
 const siteDescription =
   "Software developer focused on building web applications and systems, combining clean design, reliable functionality, and AI-powered workflows to improve speed and quality.";
-const previewImage = "/about-photo.png";
+const previewImage = versionPublicAsset("/about-photo.png");
 
 const inter = Inter({
   variable: "--font-inter",

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import aboutPhoto from "@/public/about-photo.png";
+import { versionPublicAsset } from "@/lib/versioned-assets";
 import { skillGroups } from "@/data/skills";
 import { SectionLabel } from "./SectionLabel";
 
@@ -43,7 +44,7 @@ export function About() {
 
         <figure className="about__photo-card">
           <Image
-            src={aboutPhoto}
+            src={{ ...aboutPhoto, src: versionPublicAsset("/about-photo.png") }}
             alt="Zakariya Jabbar portrait"
             loading="lazy"
             sizes="(max-width: 620px) 290px, (max-width: 820px) 302px, 328px"

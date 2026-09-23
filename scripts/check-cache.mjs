@@ -10,13 +10,19 @@ assert.equal(page.status, 200);
 assert.doesNotMatch(page.headers.get("cache-control") || "", /immutable/);
 const html = await page.text();
 
-for (const project of projects) {
+const photos = [
+  ...projects,
+  { title: "Hero portrait", image: "/hero-portrait.png" },
+  { title: "About portrait", image: "/about-photo.png" },
+];
+for (const project of photos) {
   const bytes = readFileSync(new URL(`../public${project.image}`, import.meta.url));
   const version = createHash("sha256").update(bytes).digest("hex").slice(0, 16);
   const source = `${project.image}?v=${version}`;
-  assert.ok(html.includes(source), `Page must contain versioned ${project.image}`);
+  const portrait = project.image === "/hero-portrait.png" || project.image === "/about-photo.png";
+  assert.ok(html.includes(portrait ? encodeURIComponent(source) : source), `Page must use versioned ${project.image}`);
   const original = await fetch(`${base}${project.image}`);
-  assert.equal(original.headers.get("cache-control"), "public, max-age=3600, must-revalidate");
+  assert.equal(original.headers.get("cache-control"), "public, max-age=0, must-revalidate");
   await original.arrayBuffer();
   const versioned = await fetch(`${base}${source}`);
   assert.equal(versioned.headers.get("cache-control"), "public, max-age=31536000, immutable");
