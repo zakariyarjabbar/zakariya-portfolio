@@ -661,8 +661,6 @@ main {
 
 .hero__portrait-image {
   position: relative;
-  transform: scale(1.5);
-  transform-origin: center;
   width: clamp(490px, 48vw, 680px);
   max-width: none;
   max-height: min(74vh, 740px);
