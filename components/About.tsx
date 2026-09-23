@@ -45,7 +45,8 @@ export function About() {
           <Image
             src={aboutPhoto}
             alt="Zakariya Jabbar portrait"
-            loading="eager"
+            loading="lazy"
+            sizes="(max-width: 620px) 290px, (max-width: 820px) 302px, 328px"
             draggable={false}
             className="about__photo select-none"
           />

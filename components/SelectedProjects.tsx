@@ -1,14 +1,53 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import Image, { getImageProps } from "next/image";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { projects } from "@/data/projects";
+import type { Project } from "@/data/projects";
+import { PROJECT_IMAGE_SIZES } from "@/lib/project-image";
 
-export function SelectedProjects() {
+export function SelectedProjects({ projects }: { projects: Project[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [loadedImage, setLoadedImage] = useState<string>();
+  const warmedImages = useRef(new Set<string>());
   const project = projects[activeIndex];
   const hasMultipleProjects = projects.length > 1;
+
+  useEffect(() => {
+    if (!hasMultipleProjects || loadedImage !== project?.image) return;
+
+    const warmNearbyImages = () => {
+      const connection = (navigator as Navigator & {
+        connection?: { saveData?: boolean; effectiveType?: string };
+      }).connection;
+      if (document.visibilityState !== "visible" || connection?.saveData ||
+          ["slow-2g", "2g", "3g"].includes(connection?.effectiveType ?? "")) return;
+
+      for (const direction of [1, -1]) {
+        const adjacent = projects[(activeIndex + direction + projects.length) % projects.length];
+        if (adjacent.image === project.image || warmedImages.current.has(adjacent.image)) continue;
+        warmedImages.current.add(adjacent.image);
+        const { props } = getImageProps({
+          src: adjacent.image, alt: "", fill: true, sizes: PROJECT_IMAGE_SIZES,
+        });
+        const image = new window.Image();
+        image.fetchPriority = "low";
+        image.decoding = "async";
+        image.onerror = () => warmedImages.current.delete(adjacent.image);
+        // Set sizes/srcset before src to avoid downloading an unnecessary resolution.
+        image.sizes = props.sizes ?? "";
+        image.srcset = props.srcSet ?? "";
+        image.src = props.src;
+      }
+    };
+
+    if ("requestIdleCallback" in window) {
+      const idle = window.requestIdleCallback(warmNearbyImages, { timeout: 2000 });
+      return () => window.cancelIdleCallback(idle);
+    }
+    const timer = setTimeout(warmNearbyImages, 1000);
+    return () => clearTimeout(timer);
+  }, [activeIndex, hasMultipleProjects, loadedImage, project?.image, projects]);
 
   function changeProject(direction: number) {
     setActiveIndex((current) => (current + direction + projects.length) % projects.length);
@@ -67,7 +106,8 @@ export function SelectedProjects() {
                 src={project.image}
                 alt={project.imageAlt || `${project.title} project screenshot`}
                 fill
-                sizes="(max-width: 820px) 100vw, (max-width: 1200px) 70vw, 720px"
+                sizes={PROJECT_IMAGE_SIZES}
+                onLoad={() => setLoadedImage(project.image)}
                 draggable={false}
                 className="project-showcase__image select-none"
               />

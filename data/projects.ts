@@ -1,4 +1,5 @@
 import projectData from "./projects.json";
+import { versionPublicAsset } from "@/lib/versioned-assets";
 
 export type Project = {
   title: string;
@@ -9,4 +10,9 @@ export type Project = {
   url: string;
 };
 
-export const projects: Project[] = projectData;
+export function getProjects(): Project[] {
+  return projectData.map((project) => ({
+    ...project,
+    image: versionPublicAsset(project.image),
+  }));
+}

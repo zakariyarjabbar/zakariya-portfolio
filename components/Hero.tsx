@@ -34,6 +34,7 @@ export function Hero() {
           src={heroPortrait}
           alt="Black-and-white portrait of Zakariya Jabbar"
           priority
+          sizes="(max-width: 820px) min(88vw, 430px), (max-width: 980px) 40vw, (max-width: 1100px) 42vw, clamp(450px, 44vw, 620px)"
           draggable={false}
           className="hero__portrait-image select-none"
         />
